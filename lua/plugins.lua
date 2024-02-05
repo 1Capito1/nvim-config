@@ -44,12 +44,13 @@ return {
     {'hrsh7th/nvim-cmp'},
 
 -- git integration
-{
+    {
     "NeogitOrg/neogit",
     dependencies = {
         "nvim-lua/plenary.nvim",         -- required
         "sindrets/diffview.nvim",        -- optional
-    },
+        },
     config = true
-}
+    },
+
 }
