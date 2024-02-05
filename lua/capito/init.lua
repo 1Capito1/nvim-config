@@ -1,0 +1,6 @@
+require("capito.colorscheme")
+require("capito.treesitter")
+require("capito.lsp")
+require("capito.telescope")
+require("capito.lualine")
+require("capito.boole")
