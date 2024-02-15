@@ -1,3 +1,4 @@
+-- compile and run current file
 function Run()
     local filename = vim.fn.expand("%:t")
     local file_ext = vim.fn.fnamemodify(filename, ":e")
@@ -13,6 +14,8 @@ function Run()
     end
 end
 
+
+-- test current file
 function Test()
     local filename = vim.fn.expand("%:t")
     local file_ext = vim.fn.fnamemodify(filename, ":e")
