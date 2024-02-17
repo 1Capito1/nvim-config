@@ -24,26 +24,26 @@ return {
     dependencies = { 'nvim-lua/plenary.nvim' }
     },
 
--- status line
+    -- status line
     {
     'nvim-lualine/lualine.nvim',
     dependencies = {'nvim-tree/nvim-web-devicons', opt = true}
     },
 
--- floating cmdline
+    -- floating cmdline
     {
     'VonHeikemen/fine-cmdline.nvim',
     dependencies = {'MunifTanjim/nui.nvim'}
     },
 
--- boolean toggler
+    -- boolean toggler
     {'nat-418/boole.nvim'},
 
 
--- code autocompletion
+    -- code autocompletion
     {'hrsh7th/nvim-cmp'},
 
--- git integration
+    -- git integration
     {
     "NeogitOrg/neogit",
     dependencies = {
@@ -53,4 +53,12 @@ return {
     config = true
     },
 
+    -- directory browser
+    {'stevearc/oil.nvim'},
+
+    -- nvim  config autocompletion
+    {"folke/neodev.nvim", opts = {}},
+
+    -- terminal
+    {"CRAG666/betterTerm.nvim"},
 }
