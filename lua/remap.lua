@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 
 local map = vim.api.nvim_set_keymap
 
-map('n', '<leader>pv', "<cmd>Oil<CR>", {noremap = true, silent = true})
+map('n', '-', "<cmd>Oil<CR>", {noremap = true, silent = true})
 map('n', '<leader>y', "\"+y", {noremap = true, silent = true})
 map('v', '<leader>d', '"_d', {noremap = true, silent = false})
 map('n', 'q', "", {noremap = true, silent = true})
@@ -11,4 +11,11 @@ map('n', ':', "<cmd>lua require(\"fine-cmdline\").open({default_value = \"\"})<C
 map('n', '<leader>:', ":", {noremap = true})
 map('n', "<leader>ng", ":Neogit<CR>", {noremap = true, silent = true})
 map('n', "<C-c>z", "", {noremap = false})
+map('n', "<leader>rr", ":Run<CR>", {silent = true, noremap = true})
 
+map('n', '<leader>O', 'O<Esc>', {})
+map('n', '<leader>o', 'o<Esc>', {})
+map('n', 'w', '<M-w>', {})
+map('n', '<leader>qq', '<Esc>m\'gqq\'\'a', {})
+map('n', '<leader>g', 'ggVG', {})
+map('n', '<leader>;', "A;", {})

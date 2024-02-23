@@ -16,8 +16,7 @@ return {
 
 
     -- Bracket auto-closing
-    {'jiangmiao/auto-pairs'},
-
+    {'m4xshen/autoclose.nvim'},
 
     -- File finding && grep
     {'nvim-telescope/telescope.nvim', tag = '0.1.5',
