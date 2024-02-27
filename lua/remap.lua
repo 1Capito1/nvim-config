@@ -19,3 +19,7 @@ map('n', 'w', '<M-w>', {})
 map('n', '<leader>qq', '<Esc>m\'gqq\'\'a', {})
 map('n', '<leader>g', 'ggVG', {})
 map('n', '<leader>;', "A;", {})
+
+map('n', '<Tab>', ':bnext<CR>', {})
+map('n', '<Shift><Tab>', ':bprev<CR>', {})
+map('n', 'dil', 'V<leader>d', {})

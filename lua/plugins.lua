@@ -21,43 +21,45 @@ return {
     -- File finding && grep
     {'nvim-telescope/telescope.nvim', tag = '0.1.5',
     dependencies = { 'nvim-lua/plenary.nvim' }
-    },
+},
 
-    -- status line
-    {
+-- status line
+{
     'nvim-lualine/lualine.nvim',
     dependencies = {'nvim-tree/nvim-web-devicons', opt = true}
-    },
+},
 
-    -- floating cmdline
-    {
+-- floating cmdline
+{
     'VonHeikemen/fine-cmdline.nvim',
     dependencies = {'MunifTanjim/nui.nvim'}
-    },
+},
 
-    -- boolean toggler
-    {'nat-418/boole.nvim'},
+-- boolean toggler
+{'nat-418/boole.nvim'},
 
 
-    -- code autocompletion
-    {'hrsh7th/nvim-cmp'},
+-- code autocompletion
+{'hrsh7th/nvim-cmp'},
 
-    -- git integration
-    {
+-- git integration
+{
     "NeogitOrg/neogit",
     dependencies = {
         "nvim-lua/plenary.nvim",         -- required
         "sindrets/diffview.nvim",        -- optional
-        },
-    config = true
     },
+    config = true
+},
 
-    -- directory browser
-    {'stevearc/oil.nvim'},
+-- directory browser
+{'stevearc/oil.nvim'},
 
-    -- nvim  config autocompletion
-    {"folke/neodev.nvim", opts = {}},
+-- nvim  config autocompletion
+{"folke/neodev.nvim", opts = {}},
 
-    -- terminal
-    {"CRAG666/betterTerm.nvim"},
+-- terminal
+{"CRAG666/betterTerm.nvim"},
+
+{'mfussenegger/nvim-jdtls'},
 }
