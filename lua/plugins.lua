@@ -61,5 +61,4 @@ return {
 -- terminal
 {"CRAG666/betterTerm.nvim"},
 
-{'mfussenegger/nvim-jdtls'},
 }
