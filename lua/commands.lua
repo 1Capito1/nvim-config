@@ -28,4 +28,4 @@ function Test()
 end
 
 vim.cmd("command! Run lua Run()")
-vim.cmd("command! Test lua Test()") 
+vim.cmd("command! Test lua Test()")

@@ -65,4 +65,4 @@ local cmp = require('cmp')
   require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
     capabilities = capabilities
   }
-EOF
+

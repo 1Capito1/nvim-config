@@ -34,6 +34,7 @@ api.nvim_set_hl(0, "LineNr", { fg = "#739BD0" })
 api.nvim_set_hl(0, "LineNrBelow", { fg = "#739BD0" })
 api.nvim_set_hl(0, "NonText", { fg = "#739BD0"})
 
+-- if os is unix-based, then change undodir to ~/.vim.undodir
 if package.config:sub(1, 1) == '/' then
-    opts.undodir = os.getenv("HOME") .. ".vim/undodir"
+    opts.undodir = "~/.vim/undodir"
 end
