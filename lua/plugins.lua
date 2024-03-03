@@ -61,4 +61,11 @@ return {
 -- terminal
 {"CRAG666/betterTerm.nvim"},
 
+-- better errors
+{
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+}
+
+
 }
