@@ -1,9 +1,11 @@
 -- compile and run current file
 function Run()
     local filename = vim.fn.expand("%:t")
+    local filepath = vim.fn.fnamemodify(vim.fn.expand("%:p"), ":h")
     local file_ext = vim.fn.fnamemodify(filename, ":e")
 
     if file_ext == "rs" then
+        vim.cmd("cd " .. filepath)
         vim.cmd(":term cargo run")
     elseif file_ext == "lua" then
         vim.cmd("so")
@@ -18,12 +20,14 @@ end
 -- test current file
 function Test()
     local filename = vim.fn.expand("%:t")
+    local filepath = vim.fn.fnamemodify(vim.fn.expand("%:p"), ":h")
     local file_ext = vim.fn.fnamemodify(filename, ":e")
 
     if file_ext == "rs" then
+        vim.cmd("cd .." .. filepath)
         vim.cmd(":term cargo test")
     else
-        print("unknown file type")
+        print("unknown file type") -- hola
     end
 end
 
