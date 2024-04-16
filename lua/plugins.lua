@@ -1,6 +1,7 @@
 return {
     -- colorscheme
     {"folke/tokyonight.nvim"},
+    {"ellisonleao/gruvbox.nvim", priority = 1000, config = true, opts = ...},
 
     -- treesitter
     {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
@@ -76,7 +77,16 @@ return {
 {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-}
+},
 
+-- break bad habits
+{
+    "m4xshen/hardtime.nvim",
+    dependencies = {"MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim"},
+    opts = {enabled = false},
+},
+
+-- code screenshots
+{ "mistricky/codesnap.nvim", build = "make" },
 
 }

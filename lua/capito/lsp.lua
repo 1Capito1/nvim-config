@@ -1,6 +1,7 @@
 
 -- Basic Requirements
 local lsp_zero = require("lsp-zero")
+local cmp_action = lsp_zero.cmp_action()
 
 lsp_zero.on_attach(function(client, bufnr)
 	lsp_zero.default_keymaps({buffer = bufnr})
@@ -23,7 +24,7 @@ cmp.setup({
 		{name = 'nvim_lsp'},
 	},
 	mapping = {
-		['<C-y>'] = cmp.mapping.confirm({select = false}),
+		['<Tab>'] = cmp_action.tab_complete(),
 		['<C-e>'] = cmp.mapping.abort(),
 		['<Up>'] = cmp.mapping.select_prev_item({behavior = 'select'}),
 		['<Down>'] = cmp.mapping.select_next_item({behavior = 'select'}),

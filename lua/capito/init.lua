@@ -1,4 +1,6 @@
 require("capito.colorscheme")
+require("capito.codesnap")
+require("capito.hardtime")
 require("capito.trouble")
 require("capito.autoclose")
 require("capito.treesitter")
