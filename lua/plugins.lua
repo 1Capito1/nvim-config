@@ -89,4 +89,7 @@ return {
 -- code screenshots
 { "mistricky/codesnap.nvim", build = "make" },
 
+-- java
+{'mfussenegger/nvim-jdtls'},
+
 }
