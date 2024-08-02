@@ -20,3 +20,5 @@ map('n', '<leader>;', "A;", {})
 map('n', '<Tab>', ':bnext<CR>', {})
 map('n', '<Shift><Tab>', ':bprev<CR>', {})
 map('n', 'dil', 'V<leader>d', {})
+
+map('n', '<leader>hh', ":ClangdSwitchSourceHeader<CR>", {})

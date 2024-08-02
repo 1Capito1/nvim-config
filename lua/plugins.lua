@@ -92,4 +92,7 @@ return {
 -- java
 {'mfussenegger/nvim-jdtls'},
 
+-- math
+{'jbyuki/quickmath.nvim'},
+
 }

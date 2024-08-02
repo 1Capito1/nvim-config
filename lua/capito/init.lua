@@ -1,4 +1,5 @@
 require("capito.colorscheme")
+require("capito.scripts")
 require("capito.codesnap")
 require("capito.hardtime")
 require("capito.trouble")
