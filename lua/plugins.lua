@@ -95,4 +95,23 @@ return {
 -- math
 {'jbyuki/quickmath.nvim'},
 
+{
+  "folke/todo-comments.nvim",
+  dependencies = { "nvim-lua/plenary.nvim" },
+  opts = {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+  }
+},
+
+-- debugging
+{'mfussenegger/nvim-dap'},
+
+{'jay-babu/mason-nvim-dap.nvim'},
+{'rcarriga/nvim-dap-ui'},
+{'theHamsta/nvim-dap-virtual-text'},
+{ "nvim-neotest/nvim-nio" }
+
 }
+
