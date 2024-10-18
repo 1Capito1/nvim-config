@@ -15,6 +15,11 @@ require('mason-lspconfig').setup({
 	},
 })
 
+vim.diagnostic.config({
+    update_in_insert = true,
+})
+
+lsp_zero.setup()
 
 -- Key Bindings
 local cmp = require('cmp')
@@ -22,12 +27,14 @@ local cmp = require('cmp')
 cmp.setup({
 	sources = {
 		{name = 'nvim_lsp'},
+        { name = "path" },
+        { name = "buffer" },
 	},
 	mapping = {
-		['<Tab>'] = cmp_action.tab_complete(),
 		['<C-e>'] = cmp.mapping.abort(),
 		['<Up>'] = cmp.mapping.select_prev_item({behavior = 'select'}),
 		['<Down>'] = cmp.mapping.select_next_item({behavior = 'select'}),
+        ['<Tab>'] = cmp.mapping.confirm({select = true}),
 		['<C-p>'] = cmp.mapping(function()
 			if cmp.visible() then
 				cmp.select_prev_item({behavior = 'insert'})
@@ -49,4 +56,10 @@ cmp.setup({
 		end,
 	},
 })
+
+vim.keymap.set({ "i", "s" }, "<C-e>", function()
+    if require("luasnip").expand_or_jumpable() then
+        require("luasnip").expand_or_jump()
+    end
+end, {silent = true})
 

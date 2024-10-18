@@ -4,3 +4,5 @@ require('oil').setup({
         "icon",
     }
 })
+
+vim.keymap.set("n", "<space>-", require("oil").toggle_float)

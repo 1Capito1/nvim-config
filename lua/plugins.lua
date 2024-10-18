@@ -1,7 +1,6 @@
 return {
     -- colorscheme
     {"folke/tokyonight.nvim"},
-    {"ellisonleao/gruvbox.nvim", priority = 1000, config = true, opts = ...},
 
     -- treesitter
     {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
@@ -111,7 +110,7 @@ return {
 {'jay-babu/mason-nvim-dap.nvim'},
 {'rcarriga/nvim-dap-ui'},
 {'theHamsta/nvim-dap-virtual-text'},
-{ "nvim-neotest/nvim-nio" }
-
+{ "nvim-neotest/nvim-nio" },
+{ "christoomey/vim-tmux-navigator"},
 }
 

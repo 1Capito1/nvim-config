@@ -22,3 +22,9 @@ map('n', '<Shift><Tab>', ':bprev<CR>', {})
 map('n', 'dil', 'V<leader>d', {})
 
 map('n', '<leader>hh', ":ClangdSwitchSourceHeader<CR>", {})
+
+map('n', '<C-j>', ':wincmd j<CR>', {})
+map('n', '<C-k>', ':wincmd k<CR>', {})
+map('n', '<C-h>', ':wincmd h<CR>', {})
+map('n', '<C-l>', ':wincmd l<CR>', {})
+

@@ -9,6 +9,7 @@ opts.shiftwidth = 4
 opts.softtabstop = 4
 opts.tabstop = 4
 opts.expandtab = true
+opts.colorcolumn= "80"
 
 opts.smartindent = true
 
@@ -27,8 +28,6 @@ opts.scrolloff = 8
 opts.signcolumn = "yes"
 opts.isfname:append("@-@")
 vim.opt.updatetime = 50
-
-
 
 -- if os is unix-based, then change undodir to ~/.vim.undodir
 local home_dir = os.getenv("HOME")
