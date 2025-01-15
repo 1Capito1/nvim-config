@@ -1,7 +1,6 @@
 local opts = vim.opt
 local api = vim.api
 
-
 opts.number = true
 opts.relativenumber = true
 opts.clipboard = "unnamedplus"
@@ -29,8 +28,5 @@ opts.signcolumn = "yes"
 opts.isfname:append("@-@")
 vim.opt.updatetime = 50
 
--- if os is unix-based, then change undodir to ~/.vim.undodir
 local home_dir = os.getenv("HOME")
-if package.config:sub(1, 1) == '/' then
-    opts.undodir = home_dir .. "/.vim/undodir"
-end
+opts.undodir = home_dir .. "/.vim/undodir"
