@@ -1,11 +1,11 @@
 require("mason").setup()
 require("mason-lspconfig").setup()
 
-local lspconfig = require('lspconfig')
+local lspconfigf = require('lspconfig')
 
 require('mason-lspconfig').setup_handlers({
   function(server)
-    lspconfig[server].setup({})
+    lspconfigf[server].setup({})
   end,
 })
 
@@ -31,5 +31,28 @@ require('lspconfig').lua_ls.setup {
   },
 }
 
+require('lspconfig').rust_analyzer.setup({
+  settings = {
+    ["rust-analyzer"] = {
+      imports = {
+        granularity = {
+          group = "module",
+        },
+        prefix = "self",
+      },
+      cargo = {
+        loadOutDirsFromCheck = true,
+      },
+      procMacro = {
+        enable = true,
+      },
+    },
+  },
+})
+
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, {silent = true})
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, {silent = true})
+vim.keymap.set("n", "<leader>r", function ()
+    vim.lsp.buf.rename()
+    vim.cmd("wa!")
+end, {silent = false})
