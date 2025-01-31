@@ -18,7 +18,6 @@ return {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
-    "folke/trouble.nvim",
     {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
 
     {
@@ -68,6 +67,7 @@ return {
         event = "VeryLazy",
     },
     { 'echasnovski/mini.pairs', version = false },
-    { "christoomey/vim-tmux-navigator" }
+    { "christoomey/vim-tmux-navigator"},
+    {"folke/trouble.nvim", lazy = false},
 }
 
