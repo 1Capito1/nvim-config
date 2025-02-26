@@ -1,6 +1,6 @@
 return {
     { "folke/todo-comments.nvim", opts = {} },
-    { "stevearc/oil.nvim", dependencies = { { "echasnovski/mini.icons", opts = {} } }},
+    { "stevearc/oil.nvim",        dependencies = { { "echasnovski/mini.icons", opts = {} } } },
     {
         "folke/tokyonight.nvim",
         opts = {
@@ -18,25 +18,29 @@ return {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
     "neovim/nvim-lspconfig",
-    {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 
     {
         'saghen/blink.cmp',
-        dependencies = 'rafamadriz/friendly-snippets',
+        dependencies = { 'rafamadriz/friendly-snippets' },
         version = '*',
-        opts = {
-            keymap = { preset = 'default' },
-            appearance = {
-                use_nvim_cmp_as_default = true,
-                nerd_font_variant = 'mono'
-            },
-            sources = {
-                default = { 'lsp', 'path', 'snippets', 'buffer' },
-            },
-        },
+        config = function()
+            require("blink.cmp").setup({
+                keymap = { preset = "default" },
+                appearance = {
+                    use_nvim_cmp_as_default = true,
+                    nerd_font_variant = "mono",
+                },
+                snippets = { preset = "luasnip" },
+                sources = {
+                    default = { "lsp", "path", "snippets", "buffer" },
+                },
+            })
+        end
     },
     {
-        'nvim-telescope/telescope.nvim', tag = '0.1.8',
+        'nvim-telescope/telescope.nvim',
+        tag = '0.1.8',
         -- or                              , branch = '0.1.x',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
@@ -66,8 +70,16 @@ return {
         version = "*", -- Use for stability; omit to use `main` branch for the latest features
         event = "VeryLazy",
     },
-    { 'echasnovski/mini.pairs', version = false },
-    { "christoomey/vim-tmux-navigator"},
-    {"folke/trouble.nvim", lazy = false},
+    { 'echasnovski/mini.pairs',          version = false },
+    { "christoomey/vim-tmux-navigator" },
+    { "folke/trouble.nvim",              lazy = false },
+    {
+        "L3MON4D3/LuaSnip",
+        version = "v2.*", -- Make sure you're using LuaSnip v2
+        dependencies = { "rafamadriz/friendly-snippets" },
+    },
+    {
+        "kevinhwang91/nvim-ufo",
+        dependencies = { "kevinhwang91/promise-async" },
+    },
 }
-

@@ -56,3 +56,13 @@ vim.keymap.set("n", "<leader>r", function ()
     vim.lsp.buf.rename()
     vim.cmd("wa!")
 end, {silent = false})
+
+require("lspconfig").cssls.setup {
+    settings = {
+        css = {
+            lint = {
+                unknownAtRules = "ignore"
+            }
+        }
+    }
+}
