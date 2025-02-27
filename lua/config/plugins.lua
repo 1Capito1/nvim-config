@@ -17,9 +17,10 @@ return {
     },
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",
+
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
 
+    { "neovim/nvim-lspconfig" },
     {
         'saghen/blink.cmp',
         dependencies = { 'rafamadriz/friendly-snippets' },
@@ -27,13 +28,52 @@ return {
         config = function()
             require("blink.cmp").setup({
                 keymap = { preset = "default" },
+                completion = {
+                    menu = {
+                        draw = {
+                            columns = {
+                                { "label",     "label_description", gap = 1 },
+                                { "kind_icon", "kind",              gap = 1 },
+                            },
+                        },
+                        border = "single",
+                        winblend = 0,
+                        winhighlight = 
+                        "Normal:BlinkCmpDoc,FloatBorder:BlinkCmpDocBorder",
+                        scrollbar = false
+                    },
+                    documentation = {
+                        auto_show = true,
+                    },
+                    ghost_text = {
+                        enabled = true,
+                    }
+                },
                 appearance = {
-                    use_nvim_cmp_as_default = true,
                     nerd_font_variant = "mono",
                 },
                 snippets = { preset = "luasnip" },
                 sources = {
                     default = { "lsp", "path", "snippets", "buffer" },
+                },
+                signature = {
+                    enabled = true,
+                    window = {
+                        min_width = 1,
+                        max_width = 100,
+                        max_height = 10,
+                        border = 'single',
+                        winblend = 0,
+                        winhighlight = 'Normal:BlinkCmpSignatureHelp,FloatBorder:BlinkCmpSignatureHelpBorder',
+                        scrollbar = false, -- Note that the gutter will be disabled when border ~= 'none'
+                        -- Which directions to show the window,
+                        -- falling back to the next direction when there's not enough space,
+                        -- or another window is in the way
+                        direction_priority = { 'n', 's' },
+                        -- Disable if you run into performance issues
+                        treesitter_highlighting = true,
+                        show_documentation = true,
+                    },
                 },
             })
         end
@@ -70,9 +110,9 @@ return {
         version = "*", -- Use for stability; omit to use `main` branch for the latest features
         event = "VeryLazy",
     },
-    { 'echasnovski/mini.pairs',          version = false },
+    { 'echasnovski/mini.pairs',        version = false },
     { "christoomey/vim-tmux-navigator" },
-    { "folke/trouble.nvim",              lazy = false },
+    { "folke/trouble.nvim",            lazy = false },
     {
         "L3MON4D3/LuaSnip",
         version = "v2.*", -- Make sure you're using LuaSnip v2

@@ -1,11 +1,18 @@
 require("mason").setup()
 require("mason-lspconfig").setup()
 
-local lspconfigf = require('lspconfig')
+local lspconfig = require('lspconfig')
+local blink = require("blink.cmp")
 
 require('mason-lspconfig').setup_handlers({
   function(server)
-    lspconfigf[server].setup({})
+    local base_capabilities = lspconfig[server].capabilities
+
+    local capabilities = blink.get_lsp_capabilities(base_capabilities)
+
+    lspconfig[server].setup({
+      capabilities = capabilities,
+    })
   end,
 })
 
@@ -66,3 +73,4 @@ require("lspconfig").cssls.setup {
         }
     }
 }
+
