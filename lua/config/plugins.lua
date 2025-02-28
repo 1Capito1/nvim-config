@@ -15,9 +15,9 @@ return {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons' }
     },
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "neovim/nvim-lspconfig",
+    {"williamboman/mason.nvim"},
+    {"williamboman/mason-lspconfig.nvim"},
+    {"neovim/nvim-lspconfig"},
     {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
 
     {
@@ -69,5 +69,7 @@ return {
     { 'echasnovski/mini.pairs', version = false },
     { "christoomey/vim-tmux-navigator"},
     {"folke/trouble.nvim", lazy = false},
+    {"mfussenegger/nvim-jdtls"},
+    {"sindrets/diffview.nvim"},
 }
 

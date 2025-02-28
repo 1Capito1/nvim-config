@@ -50,7 +50,7 @@ require('lspconfig').rust_analyzer.setup({
   },
 })
 
-vim.keymap.set("n", "gd", vim.lsp.buf.definition, {silent = true})
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, {silent = false})
 vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, {silent = true})
 vim.keymap.set("n", "<leader>r", function ()
     vim.lsp.buf.rename()
