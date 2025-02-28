@@ -1,11 +1,18 @@
 require("mason").setup()
 require("mason-lspconfig").setup()
 
-local lspconfigf = require('lspconfig')
+local lspconfig = require('lspconfig')
+local blink = require("blink.cmp")
 
 require('mason-lspconfig').setup_handlers({
   function(server)
-    lspconfigf[server].setup({})
+    local base_capabilities = lspconfig[server].capabilities
+
+    local capabilities = blink.get_lsp_capabilities(base_capabilities)
+
+    lspconfig[server].setup({
+      capabilities = capabilities,
+    })
   end,
 })
 
@@ -56,3 +63,14 @@ vim.keymap.set("n", "<leader>r", function ()
     vim.lsp.buf.rename()
     vim.cmd("wa!")
 end, {silent = false})
+
+require("lspconfig").cssls.setup {
+    settings = {
+        css = {
+            lint = {
+                unknownAtRules = "ignore"
+            }
+        }
+    }
+}
+
