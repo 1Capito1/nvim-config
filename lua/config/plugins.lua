@@ -122,4 +122,5 @@ return {
         "kevinhwang91/nvim-ufo",
         dependencies = { "kevinhwang91/promise-async" },
     },
+    { "lewis6991/gitsigns.nvim" },
 }
