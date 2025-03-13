@@ -74,3 +74,6 @@ require("lspconfig").cssls.setup {
     }
 }
 
+vim.diagnostic.config({
+    virtual_text = true,
+})
